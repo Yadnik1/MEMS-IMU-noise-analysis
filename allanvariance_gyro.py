@@ -6,19 +6,7 @@ import matplotlib.pyplot as plt
 DATA_FILE = 'accel-gyro-data2.csv'  # CSV data file "gx,gy,gz"
 fs = 500  # Sample rate [Hz]
 def AllanDeviation(dataArr: np.ndarray, fs: float, maxNumM: int=100):
-    """Compute the Allan deviation (sigma) of time-series data.
-    Args
-    ----
-        dataArr: 1D data array
-        fs: Data sample frequency in Hz
-        maxNumM: Number of output points
-    
-    Returns
-    -------
-        (taus, allanDev): Tuple of results
-        taus (numpy.ndarray): Array of tau values
-        allanDev (numpy.ndarray): Array of computed Allan deviations
-    """
+
     ts = 1.0 / fs
     N = len(dataArr)
     Mmax = 2**np.floor(np.log2(N / 2))
