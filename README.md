@@ -19,7 +19,7 @@ Allan variance measures the frequency stability of oscillations for a sequence o
 
 - **Drift:** Refers to systematic errors that can accumulate over time. These are deterministic in nature and can arise from various factors such as temperature changes, aging, or manufacturing imperfections. On the Allan Variance plot, it can manifest as a positive slope, indicating its deterministic nature.
 Output:
-![Accelerometer Allan Variance](./images/accel_allan_variance.jpg)
+![Accelerometer Allan Variance](./Accel_Allandeviation.png)
 ![Gyroscope Allan Variance](./images/gyro_allan_variance.jpg)
 ### 3. Noise Spectral Density: 
 Noise Spectral Density offers insights into the distribution of a signal's power over its frequency. It's essential to understand these nuances to eliminate unwanted frequencies from our data.
