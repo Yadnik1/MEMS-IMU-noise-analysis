@@ -1,13 +1,12 @@
 # MEMS-IMU-noise-analysis
 
 Calibration and Data Processing for IMU in Telematics
-1. Introduction
+# # 1. Introduction:
 The calibration and precise processing of IMU data are foundational for determining the insurance premium of car users in telematics. The data from IMUs, when evaluated correctly, gives insights into driving behavior, helping insurance companies implement "Pay As You Drive" and "Pay How You Drive" models.
 
-2. Allan Variance: Digging Deeper
-Allan Variance is not just a statistical tool; it's an insightful method that offers an understanding of the underlying noise characteristics in IMUs.
+# # 2. Allan Variance: 
+Allan Variance is a method that offers an understanding of the underlying noise characteristics in IMUs.
 
-Background
 Allan variance measures the frequency stability of oscillations for a sequence of data in the time domain. This makes it especially valuable for IMUs as they're often plagued by different types of noise.
 
 Identifying IMU Characteristics
