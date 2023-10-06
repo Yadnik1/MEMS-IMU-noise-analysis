@@ -21,7 +21,7 @@ Allan variance measures the frequency stability of oscillations for a sequence o
 Output:
 ![Accelerometer Allan Variance](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Accel_Allandeviation.png?raw=true)
 ![Gyroscope Allan Variance](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Gyro%20_Allandeviation.png?raw=true)
-(https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Gyro%20_Allandeviation.png)?raw=true)
+
 ### 3. Noise Spectral Density: 
 Noise Spectral Density offers insights into the distribution of a signal's power over its frequency. It's essential to understand these nuances to eliminate unwanted frequencies from our data.
 
