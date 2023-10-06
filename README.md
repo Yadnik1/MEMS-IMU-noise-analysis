@@ -19,22 +19,23 @@ Allan variance measures the frequency stability of oscillations for a sequence o
 
 - **Drift:** Refers to systematic errors that can accumulate over time. These are deterministic in nature and can arise from various factors such as temperature changes, aging, or manufacturing imperfections. On the Allan Variance plot, it can manifest as a positive slope, indicating its deterministic nature.
 Output:
-![Accelerometer Allan Variance](./Images/Accel_Allandeviation.png)
-![Gyroscope Allan Variance](./Images/Gyro _Allandeviation.png)
+[Accelerometer Allan Variance](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Accel_Allandeviation.png?raw=true)
+[Gyroscope Allan Variance](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Gyro_Allandeviation.png?raw=true)
 ### 3. Noise Spectral Density: 
 Noise Spectral Density offers insights into the distribution of a signal's power over its frequency. It's essential to understand these nuances to eliminate unwanted frequencies from our data.
 
 #### Significance in IMU Calibration
 While Allan Variance helps identify the types of noise, Noise Spectral Density aids in identifying the specific frequencies that might be causing them. Once identified, we can employ targeted filtering techniques to remove them, ensuring our IMU readings are as precise as possible.
 Output:
-![Accelerometer Noise Spectral Density](./Images/Accel_noise spectral density.png)
-![Gyroscope Noise Spectral Density](./Images/Gyro_noise spectral density.png)
+[Accelerometer Noise Spectral Density](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Accel_noise%20spectral%20density.png?raw=true)
+[Gyroscope Noise Spectral Density](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Gyro_noise%20spectral%20density.png?raw=true)
+
 
 ### 4. Savitzky-Golay Filter:
 When working with MEMS sensors, ensuring the output data is not marred by noise is of utmost importance. Savitzky-Golay filter, a polynomial smoothing filter, stands out in this regard.
 The filter works by fitting sub-sets of adjacent data points with a low-degree polynomial. By doing so, it effectively reduces noise, preserving the essential features of the underlying data, making it especially useful for non-stationary signals like those from IMUs.
 Output:
-![Filtered Accelerometer Data](./Images/Accel_data filtered.png)
+[Filtered Accelerometer Data](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Accel_data%20filtered.png?raw=true)
 
 #### Importance in MEMS Sensors
 MEMS sensors are particularly vulnerable to high-frequency noise. Using a filter like Savitzky-Golay helps in retaining the sensor's original signal while getting rid of the noise, ensuring the data's reliability.
