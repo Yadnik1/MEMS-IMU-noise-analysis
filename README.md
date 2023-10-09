@@ -2,54 +2,50 @@
 
 ## Calibration and Data Processing for IMU in Telematics
 
-### 1. Introduction:
-The calibration and precise processing of IMU data are foundational for determining the insurance premium of car users in telematics. The data from IMUs, when evaluated correctly, gives insights into driving behavior, helping insurance companies implement "Pay As You Drive" and "Pay How You Drive" models.
-
 ## Getting Started
-1. Please clone the Repository
-2. Run the .py files individually
+1. Please clone the Repository.
+2. Run the .py files individually.
 
-### 2. Allan Variance: 
-Allan Variance is a method that offers an understanding of the underlying noise characteristics in IMUs.
-Allan variance measures the frequency stability of oscillations for a sequence of data in the time domain. This makes it especially valuable for IMUs as they're often plagued by different types of noise.
+Allan Variance, Noise Spectral Density, and Savitzky-Golay Filter are fundamental methods employed in this project to analyze and process data from IMUs in telematics. This is crucial for determining the insurance premium of car users. 
+
+### Allan Variance
+Allan Variance provides insights into the underlying noise characteristics of IMUs. It measures the frequency stability of oscillations in a time sequence, which is invaluable given the various noise types affecting IMUs.
 
 #### Identifying IMU Noise Characteristics:
+- **White Noise:** Manifests as a flat line on an Allan Variance plot.
+- **Bias Instability:** Represents the point of optimal stability on the plot.
+- **Random Walk:** A slope of -0.5 on the plot indicates its presence.
+- **Drift:** Appears as a positive slope on the plot.
 
-- **White Noise:** A stochastic process with a constant power density across frequencies. In the context of an Allan Variance plot, it manifests as a flat line, indicating that the noise is evenly distributed across all frequency ranges.
-
-- **Bias Instability:** Represents the stability of a device's bias over time. It is depicted as the minimum variance on the Allan Variance plot, denoting the time interval where the sensor achieves the best stability. This point reflects the most stable state of the gyroscope or accelerometer and helps in determining the optimal averaging time for measurements.
-
-- **Random Walk:** This type of noise is due to the integration of white noise over a given period. In the Allan Variance plot, a slope of -0.5 signifies its presence. It denotes a cumulative effect where errors randomly increase or decrease over time, often seen in rate sensors.
-
-- **Drift:** Refers to systematic errors that can accumulate over time. These are deterministic in nature and can arise from various factors such as temperature changes, aging, or manufacturing imperfections. On the Allan Variance plot, it can manifest as a positive slope, indicating its deterministic nature.
 Output:
 ![Accelerometer Allan Variance](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Accel_Allandeviation.png?raw=true)
 ![Gyroscope Allan Variance](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Gyro%20_Allandeviation.png?raw=true)
 
-### 3. Noise Spectral Density: 
-Noise Spectral Density offers insights into the distribution of a signal's power over its frequency. It's essential to understand these nuances to eliminate unwanted frequencies from our data.
+### Noise Spectral Density
+Noise Spectral Density reveals the distribution of a signal's power over its frequency. Recognizing these details allows for the elimination of undesirable frequencies.
 
 #### Significance in IMU Calibration
-While Allan Variance helps identify the types of noise, Noise Spectral Density aids in identifying the specific frequencies that might be causing them. Once identified, we can employ targeted filtering techniques to remove them, ensuring our IMU readings are as precise as possible.
+Noise Spectral Density helps pinpoint frequencies causing noise, enabling the use of filtering techniques to enhance IMU reading precision.
+
 Output:
 ![Accelerometer Noise Spectral Density](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Accel_noise%20spectral%20density.png?raw=true)
 ![Gyroscope Noise Spectral Density](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Gyro_noise%20spectral%20density.png?raw=true)
 
+### Savitzky-Golay Filter
+The Savitzky-Golay filter, a polynomial smoothing filter, reduces noise while preserving vital data features. It's ideal for non-stationary signals, such as those from IMUs.
 
-### 4. Savitzky-Golay Filter:
-When working with MEMS sensors, ensuring the output data is not marred by noise is of utmost importance. Savitzky-Golay filter, a polynomial smoothing filter, stands out in this regard.
-The filter works by fitting sub-sets of adjacent data points with a low-degree polynomial. By doing so, it effectively reduces noise, preserving the essential features of the underlying data, making it especially useful for non-stationary signals like those from IMUs.
+#### Importance in MEMS Sensors
+The Savitzky-Golay filter is crucial for MEMS sensors as it retains the sensor's original signal while eliminating noise, ensuring data reliability.
+
 Output:
 ![Filtered Accelerometer Data](https://github.com/Yadnik1/MEMS-IMU-noise-analysis/blob/master/Images/Accel_data%20filtered.png?raw=true)
 
-#### Importance in MEMS Sensors
-MEMS sensors are particularly vulnerable to high-frequency noise. Using a filter like Savitzky-Golay helps in retaining the sensor's original signal while getting rid of the noise, ensuring the data's reliability.
-
-### 5. Data Acquisition: Foundation of Calibration
-Real-time data acquisition from IMUs is the first step in the calibration process.
+### Data Acquisition: Foundation of Calibration
+Acquiring real-time data from IMUs is crucial for calibration.
 
 #### Implementation Details
-Using serial communication, we interface with the IMU to acquire real-time data, which is then saved in CSV format. This data serves as the foundation upon which noise analysis, filtering, and calibration are performed.
+Serial communication interfaces with the IMU to collect real-time data saved in CSV format. This data is foundational for noise analysis, filtering, and calibration.
 
-### Conclusion
-By employing methods like Allan Variance and Noise Spectral Density analysis, and tools like the Savitzky-Golay filter, this project aims to ensure the calibration of IMUs for telematics devices is both rigorous and accurate. This, in turn, ensures that data derived for insurance premium calculations is reliable and representative of actual driving behaviors.
+## Project Overview
+This project utilizes methods like Allan Variance, Noise Spectral Density analysis, and tools such as the Savitzky-Golay filter to ensure rigorous and accurate IMU calibration for telematics devices. Consequently, the data used for insurance premium calculations is reliable and truly representative of driving behaviors.
+
