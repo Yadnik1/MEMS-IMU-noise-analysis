@@ -47,5 +47,10 @@ Real-time data acquisition from IMUs is the first step in the calibration proces
 #### Implementation Details
 Using serial communication, we interface with the IMU to acquire real-time data, which is then saved in CSV format. This data serves as the foundation upon which noise analysis, filtering, and calibration are performed.
 
+
+## Getting Started
+1. Please clone the Repository
+2. Run the .py files individually
+
 ### Conclusion
 By employing methods like Allan Variance and Noise Spectral Density analysis, and tools like the Savitzky-Golay filter, this project aims to ensure the calibration of IMUs for telematics devices is both rigorous and accurate. This, in turn, ensures that data derived for insurance premium calculations is reliable and representative of actual driving behaviors.
